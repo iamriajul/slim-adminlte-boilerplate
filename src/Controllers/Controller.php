@@ -153,7 +153,7 @@ abstract  class Controller
         // create a new cURL resource
         $ch = curl_init();
         // set URL and other appropriate options
-        curl_setopt( $ch, CURLOPT_URL, "http://api.a7zbd.com/api/sendsms/plain?user=${this->settings['sms']['user']}&password=${this->settings['sms']['password']}&sender=TMS&SMSText=" . urlencode( $sms ) . "&GSM=" . $phone . "" );
+        curl_setopt( $ch, CURLOPT_URL, "http://api.a7zbd.com/api/sendsms/plain?user=".$this->settings['sms']['password']."&password=".$this->settings['sms']['password']."&sender=TMS&SMSText=" . urlencode( $sms ) . "&GSM=" . $phone . "" );
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
         $result = curl_exec( $ch );
         if ($result <= 0) {
